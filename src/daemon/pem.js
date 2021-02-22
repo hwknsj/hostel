@@ -17,9 +17,12 @@ function generate() {
     }
   } else {
     log(`Generating self-signed certificate in ${tildify(hostelDir)}`)
-    const pems = selfsigned.generate([{ name: 'commonName', value: 'hostel' }], {
-      days: 365
-    })
+    const pems = selfsigned.generate(
+      [{ name: 'commonName', value: 'hostel' }],
+      {
+        days: 365
+      }
+    )
     fs.writeFileSync(KEY_FILE, pems.private, 'utf-8')
     fs.writeFileSync(CERT_FILE, pems.cert, 'utf-8')
 
