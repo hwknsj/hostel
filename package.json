@@ -1,7 +1,7 @@
 {
-  "name": "hotel",
+  "name": "hostel",
   "version": "0.9.0",
-  "description": "Local domains for everyone and more! ",
+  "description": "Updated version of abandoned project 'hotel'.",
   "main": "lib",
   "bin": "lib/cli/bin.js",
   "engines": {
