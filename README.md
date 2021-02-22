@@ -1,4 +1,4 @@
-# hostel [![Mac/Linux Build Status](https://img.shields.io/travis/typicode/hostel/master.svg?label=Mac%20OSX%20%26%20Linux)](https://travis-ci.org/typicode/hostel) [![Windows Build status](https://img.shields.io/appveyor/ci/typicode/hostel/master.svg?label=Windows)](https://ci.appveyor.com/project/typicode/hostel/branch/master) [![](https://badge.fury.io/js/hostel.svg)](https://www.npmjs.com/package/hostel)
+# hostel [![Mac/Linux Build Status](https://img.shields.io/travis/hwknsj/hostel/master.svg?label=Mac%20OSX%20%26%20Linux)](https://travis-ci.org/hwknsj/hostel) [![Windows Build status](https://img.shields.io/appveyor/ci/hwknsj/hostel/master.svg?label=Windows)](https://ci.appveyor.com/project/hwknsj/hostel/branch/development)
 
 > Start apps from your browser and use local domains/https automatically
 
