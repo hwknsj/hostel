@@ -9,9 +9,9 @@ import Link from '../Link'
 import Switch from '../Switch'
 import { observer } from 'mobx-react'
 
-const examples = `~/app$ hotel add 'cmd'
-~/app$ hotel add 'cmd -p $PORT'
-~/app$ hotel add http://192.16.1.2:3000`
+const examples = `~/app$ hostel add 'cmd'
+~/app$ hostel add 'cmd -p $PORT'
+~/app$ hostel add http://192.16.1.2:3000`
 
 export interface IProps {
   store: Store
@@ -21,11 +21,11 @@ function Nav({ store }: IProps) {
   const { isLoading, selectedMonitorId, monitors, proxies } = store
   return (
     <div className='nav'>
-      <header>hotel</header>
+      <header>hostel</header>
       <div className={classNames('menu', { hidden: isLoading })}>
         {monitors.size === 0 && proxies.size === 0 && (
           <div>
-            <p>To add a server, use hotel add</p>
+            <p>To add a server, use hostel add</p>
             <pre>
               <code>{examples}</code>
             </pre>
@@ -79,7 +79,7 @@ function Nav({ store }: IProps) {
         )}
       </div>
       <footer>
-        <a href='https://github.com/typicode/hotel' target='_blank'>
+        <a href='https://github.com/typicode/hostel' target='_blank'>
           README
         </a>
       </footer>

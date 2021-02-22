@@ -222,7 +222,7 @@ class Group extends EventEmitter {
       return res.status(404).send(msg)
     }
 
-    req.hotel = {
+    req.hostel = {
       id,
       item
     }
@@ -231,7 +231,7 @@ class Group extends EventEmitter {
   }
 
   start(req, res, next) {
-    const { item } = req.hotel
+    const { item } = req.hostel
 
     if (item.start) {
       if (item.env.PORT) {
@@ -254,7 +254,7 @@ class Group extends EventEmitter {
   }
 
   stop(req, res, next) {
-    const { item } = req.hotel
+    const { item } = req.hostel
 
     if (item.stop) {
       item.stop()
@@ -264,7 +264,7 @@ class Group extends EventEmitter {
   }
 
   proxyWeb(req, res, target) {
-    const { xfwd, changeOrigin } = req.hotel.item
+    const { xfwd, changeOrigin } = req.hostel.item
 
     this._proxy.web(
       req,
@@ -276,7 +276,7 @@ class Group extends EventEmitter {
       },
       err => {
         log('Proxy - Error', err.message)
-        const server = req.hotel.item
+        const server = req.hostel.item
         const view = server.start ? 'server-error' : 'target-error'
         res.status(502).render(view, {
           err,
@@ -289,7 +289,7 @@ class Group extends EventEmitter {
 
   proxy(req, res) {
     const [hostname, port] = req.headers.host && req.headers.host.split(':')
-    const { item } = req.hotel
+    const { item } = req.hostel
 
     // Handle case where port is set
     // http://app.localhost:5000 should proxy to http://localhost:5000
@@ -325,7 +325,7 @@ class Group extends EventEmitter {
 
   redirect(req, res) {
     const { id } = req.params
-    const { item } = req.hotel
+    const { item } = req.hostel
     const path = req.params[0] || ''
 
     // Make sure to send only one response

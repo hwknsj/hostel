@@ -25,12 +25,12 @@ function start() {
   }
 
   if (conf.autostart) {
-    const startupFile = startup.getFile('hotel')
-    startup.create('hotel', node, [daemonFile], common.logFile)
+    const startupFile = startup.getFile('hostel')
+    startup.create('hostel', node, [daemonFile], common.logFile)
 
-    // Save startup file path in ~/.hotel
+    // Save startup file path in ~/.hostel
     // Will be used later by uninstall script
-    mkdirp.sync(common.hotelDir)
+    mkdirp.sync(common.hostelDir)
     fs.writeFileSync(common.startupFile, startupFile)
   } else {
     const fd = fs.openSync(common.logFile, 'w')
@@ -47,8 +47,8 @@ function start() {
 
 // Stop daemon
 function stop() {
-  startup.remove('hotel')
-  // kills process and clean stuff in ~/.hotel
+  startup.remove('hostel')
+  // kills process and clean stuff in ~/.hostel
   uninstall()
   console.log('Stopped')
 }

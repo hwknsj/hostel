@@ -50,7 +50,7 @@ export default class Store {
   @action
   public watchServers() {
     api.watchServers(data => {
-      // Delete servers that do not exist anymore in Hotel
+      // Delete servers that do not exist anymore in hostel
       clear(this.monitors, data)
       clear(this.proxies, data)
 

@@ -1,13 +1,13 @@
 const path = require('path')
 const homedir = require('os').homedir()
 
-const hotelDir = path.join(homedir, '.hotel')
+const hostelDir = path.join(homedir, '.hostel')
 
 module.exports = {
-  hotelDir,
-  confFile: path.join(hotelDir, 'conf.json'),
-  serversDir: path.join(hotelDir, 'servers'),
-  pidFile: path.join(hotelDir, 'daemon.pid'),
-  logFile: path.join(hotelDir, 'daemon.log'),
-  startupFile: path.join(hotelDir, 'startup')
+  hostelDir,
+  confFile: path.join(hostelDir, 'conf.json'),
+  serversDir: path.join(hostelDir, 'servers'),
+  pidFile: path.join(hostelDir, 'daemon.pid'),
+  logFile: path.join(hostelDir, 'daemon.log'),
+  startupFile: path.join(hostelDir, 'startup')
 }

@@ -21,7 +21,7 @@
 * Fix error in Edge
 * Improve bundle size
 
-## 0.8.2 
+## 0.8.2
 
 * UI
 
@@ -41,8 +41,8 @@ __Breaking__
 
 * Drop Internet Explorer 11 support for the UI
 * Drop Node 4 support
-* Self-signed certicate is now generated locally and can be found in `~/.hotel`. Since it's going to be a new one, you'll need to "trust" it again to be able to use `https`
-* __`.localhost` is now the default domain and replaces `.dev` domains__ (if present, remove `"tld": "dev"` from `~/.hotel/conf.json` to use the new default value, then run `hotel stop && hotel start`)
+* Self-signed certicate is now generated locally and can be found in `~/.hostel`. Since it's going to be a new one, you'll need to "trust" it again to be able to use `https`
+* __`.localhost` is now the default domain and replaces `.dev` domains__ (if present, remove `"tld": "dev"` from `~/.hostel/conf.json` to use the new default value, then run `hostel stop && hostel start`)
 
 ## 0.7.6
 
@@ -59,7 +59,7 @@ __Breaking__
 
 ## 0.7.3
 
-* Prevent `hotel ls` from crashing when listing malformed files [#190](https://github.com/typicode/hotel/pull/190)
+* Prevent `hostel ls` from crashing when listing malformed files [#190](https://github.com/typicode/hostel/pull/190)
 
 ## 0.7.2
 
@@ -74,7 +74,7 @@ __Breaking__
 ## 0.7.0
 
 * Add `run` command
-* Add `http-proxy-env` flag to `hotel add`
+* Add `http-proxy-env` flag to `hostel add`
 * Drop Node `0.12` support
 
 __Breaking__
@@ -83,20 +83,20 @@ __Breaking__
 
 ## 0.6.1
 
-* Prevent using unsupported characters with `hotel add --name` [#100](https://github.com/typicode/hotel/issues/100)
+* Prevent using unsupported characters with `hostel add --name` [#100](https://github.com/typicode/hostel/issues/100)
 
 ## 0.6.0
 
-* Add `--xfwd` and `--change-origin` flags to `hotel add` command
+* Add `--xfwd` and `--change-origin` flags to `hostel add` command
 * Log proxy errors
 
 __Breaking__
 
-* If you want hotel to add `X-Forwarded-*` headers to requests, you need now to explicitly pass `-x/--xfwd` flags when adding a server.
+* If you want hostel to add `X-Forwarded-*` headers to requests, you need now to explicitly pass `-x/--xfwd` flags when adding a server.
 
 ## 0.5.13
 
-* Fix `hotel add` CLI bug
+* Fix `hostel add` CLI bug
 
 ## 0.5.12
 
@@ -110,7 +110,7 @@ __Breaking__
 
 ## 0.5.10
 
-* Pass `HTTP_PROXY` env to servers started by hotel
+* Pass `HTTP_PROXY` env to servers started by hostel
 
 ## 0.5.9
 
@@ -141,7 +141,7 @@ __Breaking__
 
 ## 0.5.2
 
-* Fix option alias issue [#109](https://github.com/typicode/hotel/issues/109)
+* Fix option alias issue [#109](https://github.com/typicode/hostel/issues/109)
 
 ## 0.5.1
 
@@ -150,8 +150,8 @@ __Breaking__
 ## 0.5.0
 
 * Various UI improvements
-* Add URL mapping support, for example `hotel add http://192.168.1.10 --name remote-server`
-* Change `hotel rm` options
+* Add URL mapping support, for example `hostel add http://192.168.1.10 --name remote-server`
+* Change `hostel rm` options
 
 ## 0.4.22
 
@@ -180,7 +180,7 @@ __Breaking__
 
 ## 0.4.16
 
-* Fix issue with project names containing characters not allowed for a domain name. By default, `hotel add` will now convert name to lower case and will replace space and `_` characters. However, you can still use `-n` to force a specific name or specific characters.
+* Fix issue with project names containing characters not allowed for a domain name. By default, `hostel add` will now convert name to lower case and will replace space and `_` characters. However, you can still use `-n` to force a specific name or specific characters.
 
 ## 0.4.15
 
@@ -225,7 +225,7 @@ __Breaking__
 ## 0.4.6
 
 * Bug fixes (0.4.3 to 0.4.5 deprecated).
-* Added `~/.hotel/daemon.pid` file.
+* Added `~/.hostel/daemon.pid` file.
 
 ## 0.4.3
 
