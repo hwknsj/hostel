@@ -45,7 +45,7 @@ function start() {
       .unref()
   }
 
-  console.log(`Started http://localhost:${conf.port}`)
+console.log(`Started http://${conf.host}:${conf.port}`);
 }
 
 // Stop daemon
