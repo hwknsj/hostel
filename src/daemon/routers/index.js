@@ -2,7 +2,7 @@ const express = require('express')
 const conf = require('../../conf')
 const log = require('../log')
 
-module.exports = function(group) {
+module.exports = function (group) {
   const router = express.Router()
 
   function pac(req, res) {

@@ -13,7 +13,7 @@ test.before(() => {
   sinon.stub(process, 'kill')
 })
 
-test('start should start daemon', t => {
+test('start should start daemon', (t) => {
   const node = process.execPath
   const daemonFile = path.join(__dirname, '../../src/daemon')
   const daemonLog = path.resolve(untildify('~/.hotel/daemon.log'))
@@ -37,7 +37,7 @@ test('start should start daemon', t => {
   t.pass()
 })
 
-test('stop should stop daemon', t => {
+test('stop should stop daemon', (t) => {
   fs.writeFileSync(common.pidFile, '1234')
 
   cli(['', '', 'stop'])

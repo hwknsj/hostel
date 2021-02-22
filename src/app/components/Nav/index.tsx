@@ -1,10 +1,13 @@
-import * as classNames from 'classnames'
-import { observer } from 'mobx-react'
+import './index.css'
+
 import * as React from 'react'
+import * as classNames from 'classnames'
+
 import Store, { RUNNING } from '../../Store'
+
 import Link from '../Link'
 import Switch from '../Switch'
-import './index.css'
+import { observer } from 'mobx-react'
 
 const examples = `~/app$ hotel add 'cmd'
 ~/app$ hotel add 'cmd -p $PORT'
@@ -17,18 +20,17 @@ export interface IProps {
 function Nav({ store }: IProps) {
   const { isLoading, selectedMonitorId, monitors, proxies } = store
   return (
-    <div className="nav">
+    <div className='nav'>
       <header>hotel</header>
       <div className={classNames('menu', { hidden: isLoading })}>
-        {monitors.size === 0 &&
-          proxies.size === 0 && (
-            <div>
-              <p>To add a server, use hotel add</p>
-              <pre>
-                <code>{examples}</code>
-              </pre>
-            </div>
-          )}
+        {monitors.size === 0 && proxies.size === 0 && (
+          <div>
+            <p>To add a server, use hotel add</p>
+            <pre>
+              <code>{examples}</code>
+            </pre>
+          </div>
+        )}
 
         {monitors.size > 0 && (
           <div>
@@ -42,8 +44,7 @@ function Nav({ store }: IProps) {
                       running: monitor.status === RUNNING,
                       selected: id === selectedMonitorId
                     })}
-                    onClick={() => store.selectMonitor(id)}
-                  >
+                    onClick={() => store.selectMonitor(id)}>
                     <span>
                       <Link id={id} />
                     </span>
@@ -78,7 +79,7 @@ function Nav({ store }: IProps) {
         )}
       </div>
       <footer>
-        <a href="https://github.com/typicode/hotel" target="_blank">
+        <a href='https://github.com/typicode/hotel' target='_blank'>
           README
         </a>
       </footer>

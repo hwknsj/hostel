@@ -39,13 +39,10 @@ function start() {
       stdio: ['ignore', fd, fd]
     }
 
-    cp
-      .spawn(node, [daemonFile], opts)
-      .on('error', console.log)
-      .unref()
+    cp.spawn(node, [daemonFile], opts).on('error', console.log).unref()
   }
 
-console.log(`Started http://${conf.host}:${conf.port}`);
+  console.log(`Started http://${conf.host}:${conf.port}`)
 }
 
 // Stop daemon

@@ -1,7 +1,7 @@
-var http = require('http')
+const http = require('http')
 
 http
-  .createServer(function(req, res) {
+  .createServer(function (req, res) {
     console.log(req.headers)
     res.writeHead(200, { 'Content-Type': 'text/plain' })
     res.end(
@@ -10,7 +10,7 @@ http
         process.env.FOO,
         process.env.HTTP_PROXY,
         'x-forwarded-host: ' + req.headers['x-forwarded-host'],
-        'host: ' + req.headers.host
+        'host: ' + req.headers.host,
       ].join(' ')
     )
   })

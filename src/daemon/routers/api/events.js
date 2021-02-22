@@ -45,7 +45,7 @@ module.exports = group => {
     // Bootstrap
     const list = group.list()
     Object.keys(list).forEach(id => {
-      var mon = list[id]
+      const mon = list[id]
       if (mon && mon.tail) {
         sendOutput(id, mon.tail)
       }

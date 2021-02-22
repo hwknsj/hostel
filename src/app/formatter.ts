@@ -1,8 +1,13 @@
 import * as ansi2HTML from 'ansi2html'
-import * as escapeHTML from 'escape-html'
+
 import { IMonitor } from './Store'
 
-function blankLine(val: string) {
+// import * as escapeHTML from 'escape-html'
+
+// tslint-disable-next-line no-var-requires
+const escapeHTML = require('escape-html').escapeHTML
+
+function blankLine(val: any) {
   return val.trim() === '' ? '&nbsp;' : val
 }
 

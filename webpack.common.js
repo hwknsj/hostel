@@ -17,7 +17,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      mobx: path.resolve(__dirname, '/node_modules/mobx/lib/mobx.es6.js')
+    }
   },
   output: {
     filename: 'bundle.js',

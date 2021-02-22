@@ -31,11 +31,7 @@ class Group extends EventEmitter {
   }
 
   _log(mon, logFile, data) {
-    mon.tail = mon.tail
-      .concat(data)
-      .split('\n')
-      .slice(-100)
-      .join('\n')
+    mon.tail = mon.tail.concat(data).split('\n').slice(-100).join('\n')
 
     if (logFile) {
       fs.appendFile(logFile, data, err => {
@@ -330,12 +326,12 @@ class Group extends EventEmitter {
   redirect(req, res) {
     const { id } = req.params
     const { item } = req.hotel
-    let path = req.params[0] || ''
+    const path = req.params[0] || ''
 
     // Make sure to send only one response
     const send = once(() => {
       let target = item.target + (item.target.endsWith('/') ? '' : '/') + path
-      let parsedUrl = url.parse(req.url)
+      const parsedUrl = url.parse(req.url)
       if (parsedUrl.search) {
         target = target + parsedUrl.search
       }
@@ -366,6 +362,7 @@ class Group extends EventEmitter {
     }
   }
 
+  // NOTE: can use the intuitively named WHATWG URL API:  https://nodejs.org/api/url.html#url_the_whatwg_url_api
   parseHost(host) {
     const [hostname, port] = host.split(':')
     const tld = new RegExp(`.${daemonConf.tld}$`)
@@ -387,7 +384,8 @@ class Group extends EventEmitter {
         } else if (item.start) {
           target = `ws://127.0.0.1:${item.env.PORT}`
         } else {
-          const { hostname, port } = url.parse(item.target)
+          // const { hostname, port } = url.parse(item.target)
+          const { hostname, port } = url.format(item.target)
           const targetPort = port || 80
           target = `ws://${hostname}:${targetPort}`
         }

@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { IMonitor, IProxy } from '../../Store'
 
 const HOTEL_REGEXP = /^hotel\./
@@ -20,7 +21,7 @@ interface IProps {
 
 function Link({ id }: IProps) {
   return (
-    <a href={href(id)} target="_blank" onClick={e => e.stopPropagation()}>
+    <a href={href(id)} target='_blank' onClick={e => e.stopPropagation()}>
       {id}
     </a>
   )

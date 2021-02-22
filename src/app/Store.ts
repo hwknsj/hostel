@@ -1,6 +1,8 @@
-import * as uniqueId from 'lodash.uniqueid'
-import { action, computed, observable } from 'mobx'
 import * as api from './api'
+import * as uniqueId from 'lodash.uniqueid'
+
+import { action, observable } from 'mobx'
+
 import { formatLines } from './formatter'
 
 export interface IProxy {
@@ -42,6 +44,7 @@ export default class Store {
   constructor() {
     this.watchServers()
     this.watchOutput()
+    // makeObservable(this)
   }
 
   @action

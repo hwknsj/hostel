@@ -7,7 +7,7 @@ const run = require('../../src/cli/run')
 
 const appDir = path.join(__dirname, '../fixtures/app')
 
-test('spawn with port', t => {
+test('spawn with port', (t) => {
   const status = 1
 
   sinon.spy(servers, 'add')
@@ -41,7 +41,7 @@ test('spawn with port', t => {
   t.is(run._exit.firstCall.args[0], status, 'should exit')
 })
 
-test('cli run should call run.spawn', t => {
+test('cli run should call run.spawn', (t) => {
   sinon.stub(run, 'spawn')
   cli(['', '', 'run', 'node index.js'])
 
